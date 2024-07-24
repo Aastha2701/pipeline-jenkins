@@ -5,13 +5,13 @@ pipeline {
         stage("clone code"){
             steps {
                 echo "code cloning hogya repo se"
-                git url: "https://github.com/iam-mohanty/docker-compose-jenkins-declarative-nodeapp.git", branch: "master"
+                git url: "https://github.com/urdevopswithdev/jenkins-freestyle-container.git", branch: "master"
             }
         }
         stage("code build"){
             steps {
                 echo "code build v karliye"
-                sh "docker build . -t my-node-app:latest"
+                sh "docker build . -t myjenkins:latest"
             }
         }
         stage("code test"){
@@ -23,9 +23,9 @@ pipeline {
             steps {
                 echo "pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag my-node-app ${env.dockerHubUser}/my-node-app:latest"
+                sh "docker tag my-node-app ${env.dockerHubUser}/myjenkins:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/my-node-app:latest"
+                sh "docker push ${env.dockerHubUser}/myjenkins:latest"
                 }
             }
         }
