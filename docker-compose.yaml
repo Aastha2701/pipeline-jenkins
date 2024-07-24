@@ -2,6 +2,6 @@ version : "3.3"
 
 services :
   web :
-    image : "amohanty13/my-node-app:latest"
+    image : "urdockerhub/myjenkins:latest"
     ports :
         - "8000:8000"
