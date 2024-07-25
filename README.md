@@ -54,7 +54,7 @@ sudo reboot
 
 again build now
 
-# 4. create docker-hub credential
+#### create docker-hub credential
 
 manage jenkins -> credentials -> goto system -> global credential -> add credential -> mention ur dockerhub username & pw , id : dockerHub
 
