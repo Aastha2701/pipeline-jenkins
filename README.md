@@ -1,6 +1,6 @@
 # Declarative Pipeline Jenkins
 
-# 1. install ubuntu 
+# 1. Install ubuntu 
 
 create aws ubuntu-22 server  ----->   login as : ubuntu 
 
@@ -12,18 +12,16 @@ sudo usermod -aG docker $USER
 
 sudo reboot , again login
 
-# 2. jenkins install
+# 2. Java install
 
 sudo apt install openjdk-11-jre -y
 
 java --version
 
+# 3. Jenkins install
+
 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu ( For Jenkins Installation )
   
-sudo apt-get update
-
-sudo apt-get install jenkins
-
 login jenkins
 
 # 3. start project
