@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     stages{
-        stage("clone code"){
+        stage("code from github"){
             steps {
-                echo "code cloning hogya repo se"
-                git url: "https://github.com/urdevopswithdev/jenkins-freestyle-container.git", branch: "master"
+                echo "code aagaya repo se"
+                git url: "https://github.com/urdevopswithdev/pipeline-jenkins.git", branch: "master"
             }
         }
-        stage("code build"){
+        stage("now build code"){
             steps {
-                echo "code build v karliye"
-                sh "docker build . -t myjenkins:latest"
+                echo "code build v hogya h"
+                sh "docker build . -t mypipelineimg:latest"
             }
         }
         stage("code test"){
@@ -23,15 +23,15 @@ pipeline {
             steps {
                 echo "pushing the image to docker hub"
                 withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                sh "docker tag my-node-app ${env.dockerHubUser}/myjenkins:latest"
+                sh "docker tag mypipelineimg ${env.dockerHubUser}/mypipelineimg:latest"
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                sh "docker push ${env.dockerHubUser}/myjenkins:latest"
+                sh "docker push ${env.dockerHubUser}/mypipelineimg:latest"
                 }
             }
         }
         stage("deploy"){
             steps {
-                echo "deploying the container"
+                echo "deploying container"
                 sh "docker-compose down && docker-compose up -d"
             }
         }
