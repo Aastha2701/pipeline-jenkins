@@ -28,7 +28,15 @@ sudo systemctl enable jenkins
 
 sudo systemctl start jenkins
   
-login jenkins
+#### login jenkins :-
+
+Generate password  = sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+login jenkins = < ec2-public-ip >:8080
+
+now paste your password
+
+install suggested plug-ins and update your jenkins credentials
 
 # 3. start project
 
