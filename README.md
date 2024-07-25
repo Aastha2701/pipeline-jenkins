@@ -40,11 +40,11 @@ install suggested plug-ins and update your jenkins credentials
 
 # 4. start project
 
-Go to jenkins dashboard    ----->   create pipeline project
+Go to jenkins dashboard    ----->   new item   --->  create pipeline project
 
-mention anything inside description
+( mention anything inside description )
 
-github projects : mention ur github repo ; https://github.com/urdevopswithdev/pipeline-jenkins.git
+github projects   ----->   mention ur github repo = https://github.com/urdevopswithdev/pipeline-jenkins.git
 
 add syntax in pipeline section (paste it from jenkinsfile) , build
 
