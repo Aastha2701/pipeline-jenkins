@@ -58,6 +58,8 @@ again build now
 
 manage jenkins -> credentials -> goto system -> global credential -> add credential -> mention ur dockerhub username & pw , id : dockerHub
 
+again build now
+
 # 5. install docker-compose
 
 sudo apt-get install docker-compose -y
