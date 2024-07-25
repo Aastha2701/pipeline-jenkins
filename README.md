@@ -21,6 +21,10 @@ java --version
 # 3. Jenkins install
 
 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu ( For Jenkins Installation )
+
+sudo systemctl enable jenkins
+
+
   
 login jenkins
 
